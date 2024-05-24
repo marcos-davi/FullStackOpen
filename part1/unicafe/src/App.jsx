@@ -15,6 +15,9 @@ const App = () => {
        setState(state + 1)    }
    return setToState
   }
+   const all = good + bad + neutral 
+   const average = () => (good - bad) / all
+   const positive = () => (good / all) * 100 + '%'
 
   return (
     <div>
@@ -26,6 +29,9 @@ const App = () => {
      <Static text='good' state={good} />
      <Static text='neutral' state={neutral} />
      <Static text='bad' state={bad} />
+     <Static text='all' state={all} />
+     <Static text='average' state={average()} />
+     <Static text='positive' state={positive()} />
     </div>
   )
 }
