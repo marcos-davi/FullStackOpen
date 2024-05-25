@@ -12,9 +12,13 @@ const App = () => {
     <button onClick={props.handleClick}>{props.text}</button>
   );
   const StatisticLine = (props) => (
-    <p>
-      {props.text} {props.state}{" "}
-    </p>
+    <>
+      <tr>
+        <td>{props.text} </td>
+        <td>{props.state}{" "}</td>
+      </tr>
+
+    </>
   );
 
   const Statistics = (props) => {
@@ -23,12 +27,16 @@ const App = () => {
     }
     return (
       <>
-        <StatisticLine text="good" state={props.good} />
-        <StatisticLine text="neutral" state={props.neutral} />
-        <StatisticLine text="bad" state={props.bad} />
-        <StatisticLine text="all" state={props.all} />
-        <StatisticLine text="average" state={props.average} />
-        <StatisticLine text="positive" state={props.positive} />
+        <table>
+          <tbody>
+            <StatisticLine text="good" state={props.good} />
+            <StatisticLine text="neutral" state={props.neutral} />
+            <StatisticLine text="bad" state={props.bad} />
+            <StatisticLine text="all" state={props.all} />
+            <StatisticLine text="average" state={props.average} />
+            <StatisticLine text="positive" state={props.positive} />
+          </tbody>
+        </table>
       </>
     );
   };
