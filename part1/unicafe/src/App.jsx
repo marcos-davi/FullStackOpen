@@ -11,7 +11,11 @@ const App = () => {
   const Static = (props) => <p>{props.text} {props.state} </p>
 
   const Statics = (props) => {
-
+    if( all === 0) {
+      return(
+         <div>No feedback given</div>
+      )     
+    }  
     return (
       <>
         <Static text='good' state={props.good} />
@@ -35,6 +39,7 @@ const App = () => {
   const positive = () => (good / all) * 100 + '%'
 
   return (
+   
     <div>
       <Title text='give feedback' />
       <Button handleClick={handleClick(good, setGood)} text='good' />
