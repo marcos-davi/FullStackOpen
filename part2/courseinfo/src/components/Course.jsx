@@ -2,8 +2,6 @@ import Contents from "./Contents";
 import Header from "./Header";
 import Total from "./Total";
 
-
-
 const Course = ({ course }) => {
 
     return (
