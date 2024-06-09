@@ -12,6 +12,7 @@ const App = () => {
     return (
       <div>
         {persons.map((person) => (
+
           <div key={person.name}>{person.name}</div>
         ))}
       </div>
@@ -23,9 +24,15 @@ const App = () => {
   };
   const addPerson = (event) => {
     event.preventDefault();
-    const person = { name: newName };
-    setPersons(persons.concat(person));
-    setNewName("");
+    const allPerson = persons.map((person) => person.name)
+    if (allPerson.includes(newName)) {
+      alert(`${newName} is alread added to phonebook`)
+      return
+    }
+    {
+      setPersons(persons.concat({ name: newName }));
+      setNewName("");
+    }
   };
 
   return (
